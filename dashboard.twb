@@ -1,0 +1,1313 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0514.2217                               -->
+<workbook original-version='18.1' source-build='2025.2.0 (20252.25.0514.2217)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='dt_meas_type' inline='true' name='federated.0g9f6he0uuijk51ad7rv01p9fa6l' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dt_meas_type' name='textscan.0yux0pl1dy4xzu1dcmqz81qwf5xd'>
+            <connection class='textscan' directory='E:/OneDrive - Alma Mater Studiorum Università di Bologna/Documents/repos/dataset-pnrr-spoke2/output' filename='dt_meas_type.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <aliases enabled='yes' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;IT&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph />
+    </datasource>
+    <datasource caption='ft_meas+' inline='true' name='federated.0zf2wmf0dmbef61arx5cn0lrwhkp' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ft_meas' name='textscan.0fcipup1oe49jn17y6ejd1m90f24'>
+            <connection class='textscan' directory='E:/OneDrive - Alma Mater Studiorum Università di Bologna/Documents/repos/dataset-pnrr-spoke2/output' filename='ft_meas.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='ft_meas.csv' table='[ft_meas#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='station_id' ordinal='0' />
+              <column datatype='string' name='station_name' ordinal='1' />
+              <column datatype='string' name='variable_code' ordinal='2' />
+              <column datatype='string' name='variable_name' ordinal='3' />
+              <column datatype='real' name='longitude' ordinal='4' />
+              <column datatype='real' name='latitude' ordinal='5' />
+              <column datatype='string' name='ts' ordinal='6' />
+              <column datatype='real' name='value' ordinal='7' />
+              <column datatype='integer' name='year' ordinal='8' />
+              <column datatype='string' name='month' ordinal='9' />
+              <column datatype='date' name='date' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='dt_meas_type.csv' table='[dt_meas_type#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='variable_id' ordinal='0' />
+              <column datatype='string' name='variable_code' ordinal='1' />
+              <column datatype='string' name='name' ordinal='2' />
+              <column datatype='string' name='unit_code' ordinal='3' />
+              <column datatype='string' name='unit_symbol' ordinal='4' />
+              <column datatype='string' name='unit_name' ordinal='5' />
+              <column datatype='string' name='description' ordinal='6' />
+              <column datatype='string' name='created_at' ordinal='7' />
+              <column datatype='string' name='updated_at' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='dt_station.csv' table='[dt_station#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='station_id' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='integer' name='id_campo' ordinal='2' />
+              <column datatype='integer' name='id_azienda' ordinal='3' />
+              <column datatype='string' name='Provincia' ordinal='4' />
+              <column datatype='string' name='Località' ordinal='5' />
+              <column datatype='string' name='Comune' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Comune]' value='[dt_station.csv].[Comune]' />
+          <map key='[Località]' value='[dt_station.csv].[Località]' />
+          <map key='[Provincia]' value='[dt_station.csv].[Provincia]' />
+          <map key='[created_at]' value='[dt_meas_type.csv].[created_at]' />
+          <map key='[date]' value='[ft_meas.csv].[date]' />
+          <map key='[description]' value='[dt_meas_type.csv].[description]' />
+          <map key='[id_azienda]' value='[dt_station.csv].[id_azienda]' />
+          <map key='[id_campo]' value='[dt_station.csv].[id_campo]' />
+          <map key='[latitude]' value='[ft_meas.csv].[latitude]' />
+          <map key='[longitude]' value='[ft_meas.csv].[longitude]' />
+          <map key='[month]' value='[ft_meas.csv].[month]' />
+          <map key='[name (dt_meas_type.csv)]' value='[dt_meas_type.csv].[name]' />
+          <map key='[name]' value='[dt_station.csv].[name]' />
+          <map key='[station_id (dt_station.csv)]' value='[dt_station.csv].[station_id]' />
+          <map key='[station_id]' value='[ft_meas.csv].[station_id]' />
+          <map key='[station_name]' value='[ft_meas.csv].[station_name]' />
+          <map key='[ts]' value='[ft_meas.csv].[ts]' />
+          <map key='[unit_code]' value='[dt_meas_type.csv].[unit_code]' />
+          <map key='[unit_name]' value='[dt_meas_type.csv].[unit_name]' />
+          <map key='[unit_symbol]' value='[dt_meas_type.csv].[unit_symbol]' />
+          <map key='[updated_at]' value='[dt_meas_type.csv].[updated_at]' />
+          <map key='[value]' value='[ft_meas.csv].[value]' />
+          <map key='[variable_code (dt_meas_type.csv)]' value='[dt_meas_type.csv].[variable_code]' />
+          <map key='[variable_code]' value='[ft_meas.csv].[variable_code]' />
+          <map key='[variable_id]' value='[dt_meas_type.csv].[variable_id]' />
+          <map key='[variable_name]' value='[ft_meas.csv].[variable_name]' />
+          <map key='[year]' value='[ft_meas.csv].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>station_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[station_id]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>station_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>station_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[station_name]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>station_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variable_code]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>variable_code</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variable_name]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>variable_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ts</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ts]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>ts</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[ft_meas.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[variable_id]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>variable_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variable_code (dt_meas_type.csv)]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>variable_code</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (dt_meas_type.csv)]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit_code]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>unit_code</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit_symbol</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit_symbol]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>unit_symbol</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit_name]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>unit_name</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[description]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>description</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_at</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[created_at]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>created_at</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_at</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated_at]</local-name>
+            <parent-name>[dt_meas_type.csv]</parent-name>
+            <remote-alias>updated_at</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>station_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[station_id (dt_station.csv)]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>station_id</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_campo</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_campo]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>id_campo</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_azienda</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_azienda]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>id_azienda</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Provincia</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Provincia]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>Provincia</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Località</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Località]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>Località</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Comune</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Comune]</local-name>
+            <parent-name>[dt_station.csv]</parent-name>
+            <remote-alias>Comune</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Provincia]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='dt_meas_type.csv' datatype='table' name='[__tableau_internal_object_id__].[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]' role='measure' type='quantitative' />
+      <column caption='dt_station.csv' datatype='table' name='[__tableau_internal_object_id__].[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]' role='measure' type='quantitative' />
+      <column caption='ft_meas.csv' datatype='table' name='[__tableau_internal_object_id__].[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]' role='measure' type='quantitative' />
+      <column caption='Id Azienda' datatype='integer' name='[id_azienda]' role='dimension' type='ordinal' />
+      <column caption='Id Campo' datatype='integer' name='[id_campo]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Station Id (Dt Station.Csv)' datatype='integer' name='[station_id (dt_station.csv)]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='it_IT' class='hyper' dbname='C:/Users/MATTEO~1.FRA/AppData/Local/Temp/TableauTemp/#TableauTemp_1k70deq19vmept151od7r0h3my94.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='10/31/2025 10:24:35 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC' table='[Extract].[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]' type='table' />
+            <relation name='dt_meas_type.csv_B041190CE4594163BB187D1313114FD6' table='[Extract].[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]' type='table' />
+            <relation name='dt_station.csv_02003BF38A064CD08658FD6E8A4374F4' table='[Extract].[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Comune]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[Comune]' />
+            <map key='[Località]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[Località]' />
+            <map key='[Provincia]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[Provincia]' />
+            <map key='[created_at]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[created_at]' />
+            <map key='[date]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[date]' />
+            <map key='[description]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[description]' />
+            <map key='[id_azienda]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[id_azienda]' />
+            <map key='[id_campo]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[id_campo]' />
+            <map key='[latitude]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[latitude]' />
+            <map key='[longitude]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[longitude]' />
+            <map key='[month]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[month]' />
+            <map key='[name (dt_meas_type.csv)]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[name]' />
+            <map key='[name]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[name]' />
+            <map key='[station_id (dt_station.csv)]' value='[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4].[station_id]' />
+            <map key='[station_id]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[station_id]' />
+            <map key='[station_name]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[station_name]' />
+            <map key='[ts]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[ts]' />
+            <map key='[unit_code]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[unit_code]' />
+            <map key='[unit_name]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[unit_name]' />
+            <map key='[unit_symbol]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[unit_symbol]' />
+            <map key='[updated_at]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[updated_at]' />
+            <map key='[value]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[value]' />
+            <map key='[variable_code (dt_meas_type.csv)]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[variable_code]' />
+            <map key='[variable_code]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[variable_code]' />
+            <map key='[variable_id]' value='[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6].[variable_id]' />
+            <map key='[variable_name]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[variable_name]' />
+            <map key='[year]' value='[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC].[year]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[station_id]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>station_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>station_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[station_name]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>station_name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>variable_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[variable_code]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>variable_code</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>variable_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[variable_name]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>variable_name</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[longitude]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>longitude</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[latitude]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>latitude</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ts</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ts]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>ts</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>344</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[value]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>value</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1039</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>10</ordinal>
+              <family>ft_meas.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>variable_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[variable_id]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>variable_id</remote-alias>
+              <ordinal>11</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>variable_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[variable_code (dt_meas_type.csv)]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>variable_code</remote-alias>
+              <ordinal>12</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name (dt_meas_type.csv)]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>13</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>unit_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[unit_code]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>unit_code</remote-alias>
+              <ordinal>14</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>unit_symbol</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[unit_symbol]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>unit_symbol</remote-alias>
+              <ordinal>15</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>unit_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[unit_name]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>unit_name</remote-alias>
+              <ordinal>16</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[description]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>description</remote-alias>
+              <ordinal>17</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>created_at</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[created_at]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>created_at</remote-alias>
+              <ordinal>18</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>updated_at</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[updated_at]</local-name>
+              <parent-name>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</parent-name>
+              <remote-alias>updated_at</remote-alias>
+              <ordinal>19</ordinal>
+              <family>dt_meas_type.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[station_id (dt_station.csv)]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>station_id</remote-alias>
+              <ordinal>20</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>21</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_campo</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id_campo]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>id_campo</remote-alias>
+              <ordinal>22</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_azienda</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id_azienda]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>id_azienda</remote-alias>
+              <ordinal>23</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Provincia</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Provincia]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>Provincia</remote-alias>
+              <ordinal>24</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Località</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Località]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>Località</remote-alias>
+              <ordinal>25</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Comune</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Comune]</local-name>
+              <parent-name>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</parent-name>
+              <remote-alias>Comune</remote-alias>
+              <ordinal>26</ordinal>
+              <family>dt_station.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;IT&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='dt_meas_type.csv' id='dt_meas_type.csv_B041190CE4594163BB187D1313114FD6'>
+            <properties context=''>
+              <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='dt_meas_type.csv' table='[dt_meas_type#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='variable_id' ordinal='0' />
+                  <column datatype='string' name='variable_code' ordinal='1' />
+                  <column datatype='string' name='name' ordinal='2' />
+                  <column datatype='string' name='unit_code' ordinal='3' />
+                  <column datatype='string' name='unit_symbol' ordinal='4' />
+                  <column datatype='string' name='unit_name' ordinal='5' />
+                  <column datatype='string' name='description' ordinal='6' />
+                  <column datatype='string' name='created_at' ordinal='7' />
+                  <column datatype='string' name='updated_at' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dt_meas_type.csv_B041190CE4594163BB187D1313114FD6' table='[Extract].[dt_meas_type.csv_B041190CE4594163BB187D1313114FD6]' type='table' />
+            </properties>
+          </object>
+          <object caption='dt_station.csv' id='dt_station.csv_02003BF38A064CD08658FD6E8A4374F4'>
+            <properties context=''>
+              <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='dt_station.csv' table='[dt_station#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='station_id' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='integer' name='id_campo' ordinal='2' />
+                  <column datatype='integer' name='id_azienda' ordinal='3' />
+                  <column datatype='string' name='Provincia' ordinal='4' />
+                  <column datatype='string' name='Località' ordinal='5' />
+                  <column datatype='string' name='Comune' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dt_station.csv_02003BF38A064CD08658FD6E8A4374F4' table='[Extract].[dt_station.csv_02003BF38A064CD08658FD6E8A4374F4]' type='table' />
+            </properties>
+          </object>
+          <object caption='ft_meas.csv' id='ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC'>
+            <properties context=''>
+              <relation connection='textscan.0fcipup1oe49jn17y6ejd1m90f24' name='ft_meas.csv' table='[ft_meas#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='station_id' ordinal='0' />
+                  <column datatype='string' name='station_name' ordinal='1' />
+                  <column datatype='string' name='variable_code' ordinal='2' />
+                  <column datatype='string' name='variable_name' ordinal='3' />
+                  <column datatype='real' name='longitude' ordinal='4' />
+                  <column datatype='real' name='latitude' ordinal='5' />
+                  <column datatype='string' name='ts' ordinal='6' />
+                  <column datatype='real' name='value' ordinal='7' />
+                  <column datatype='integer' name='year' ordinal='8' />
+                  <column datatype='string' name='month' ordinal='9' />
+                  <column datatype='date' name='date' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC' table='[Extract].[ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[variable_code]' />
+              <expression op='[variable_code (dt_meas_type.csv)]' />
+            </expression>
+            <first-end-point object-id='ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC' />
+            <second-end-point object-id='dt_meas_type.csv_B041190CE4594163BB187D1313114FD6' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[station_id]' />
+              <expression op='[station_id (dt_station.csv)]' />
+            </expression>
+            <first-end-point object-id='ft_meas.csv_E6CEB05A4F9F4919A6D1BBA12BBA1BEC' />
+            <second-end-point object-id='dt_station.csv_02003BF38A064CD08658FD6E8A4374F4' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Foglio 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ft_meas+' name='federated.0zf2wmf0dmbef61arx5cn0lrwhkp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0zf2wmf0dmbef61arx5cn0lrwhkp'>
+            <column-instance column='[value]' derivation='Avg' name='[avg:value:qk]' pivot='key' type='quantitative' />
+            <column datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[station_name]' derivation='None' name='[none:station_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[variable_code]' derivation='None' name='[none:variable_code:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[station_name]' role='dimension' type='nominal' />
+            <column-instance column='[date]' derivation='Day-Trunc' name='[tdy:date:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[value]' role='measure' type='quantitative' />
+            <column datatype='string' name='[variable_code]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:variable_code:nk]'>
+            <groupfilter function='member' level='[none:variable_code:nk]' member='&quot;air_humidity&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:variable_code:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:station_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[avg:value:qk]</rows>
+        <cols>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[tdy:date:qk]</cols>
+      </table>
+      <simple-id uuid='{6EAB7E96-73BE-441A-B817-B20B70CAA5F1}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+    <window class='worksheet' maximized='true' name='Foglio 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:station_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:station_name:nk]</field>
+            <field>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[none:variable_code:nk]</field>
+            <field>[federated.0zf2wmf0dmbef61arx5cn0lrwhkp].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{95A127E2-9E10-4A4E-80CE-0EF05F550CD1}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Foglio 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
