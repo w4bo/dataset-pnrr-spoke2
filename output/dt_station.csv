@@ -1,6 +1,6 @@
-experimental_unit,name,field_trial_site,farm,latitude,longitude,province,location,city,species,variety
-2382,Sasso Marconi Arpa,1,5,44.43967,11.24125,Bologna,Tizzano,Casalecchio di Reno,Vite da vino,Chardonnay
-2147,Rolo,1,4,44.88542,10.87451,Reggio Emilia,Fabbrico,Fabbrico,Vite da vino,Malbo Gentile
-2341,Sant'Apollinare Cmt,1,2,45.0334,11.82597,Rovigo,Arquà Polesine,Arquà Polesine,Frumento Duro,Cesare
-2262,S Pietro Capofiume,1,1,44.65378,11.62264,Bologna,Dugliolo,Budrio,Frumento Duro,Cesare
-1325,Macerata Montalbano,1,3,43.29223,13.4187,Macerata,Rancia,Tolentino,Frumento Duro,Cesare
+weather_station,location,city,province,latitude_ws,longitude_ws
+2382,Tizzano,Casalecchio di Reno,Bologna,44.43967,11.24125
+2147,Fabbrico,Fabbrico,Reggio Emilia,44.88542,10.87451
+2341,Arquà Polesine,Arquà Polesine,Rovigo,45.0334,11.82597
+2262,Dugliolo,Budrio,Bologna,44.65378,11.62264
+1325,Rancia,Tolentino,Macerata,43.29223,13.4187

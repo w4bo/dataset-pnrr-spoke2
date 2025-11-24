@@ -1,4 +1,4 @@
-experimental_unit,hour,date,air_humidity,air_pressure,air_temperature,rainfall
+weather_station,hour,date,air_humidity,air_pressure,air_temperature,rainfall
 1325,00,2025-10-11,88.0,,13.85,0.0
 1325,00,2025-10-12,77.5,,14.5,0.0
 1325,00,2025-10-13,75.5,,14.65,0.0
