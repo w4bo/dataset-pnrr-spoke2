@@ -1,6 +1,13 @@
-weather_station,name,field,farm,latitude_ws,longitude_ws,latitude_field,longitude_field,province,location,city,species,variety
-2382,Sasso Marconi Arpa,5-1,5,44.43967,11.24125,44.460924,11.244618,Bologna,Tizzano,Casalecchio di Reno,Vite da vino,Chardonnay
-2147,Rolo,4-1,4,44.88542,10.87451,44.875287,10.835891,Reggio Emilia,Fabbrico,Fabbrico,Vite da vino,Malbo Gentile
-2341,Sant'Apollinare Cmt,2-1,2,45.0334,11.82597,45.007509,11.751587,Rovigo,Arquà Polesine,Arquà Polesine,Frumento Duro,Cesare
-2262,S Pietro Capofiume,1-1,1,44.65378,11.62264,44.60427,11.560234,Bologna,Dugliolo,Budrio,Frumento Duro,Cesare
-1325,Macerata Montalbano,3-1,3,43.29223,13.4187,43.234749,13.351375,Macerata,Rancia,Tolentino,Frumento Duro,Cesare
+weather_station,name_ws,field,farm,latitude_field,longitude_field,latitude_ws,longitude_ws,province,location,city,species,variety,valid_from,valid_to
+2382,Sasso Marconi Arpa,f5-f1,5,44.46038888888889,11.244194444444444,44.43967,11.24125,Bologna,Tizzano,Casalecchio di Reno,Vite da vino,Chardonnay,3/1/2022,10/31/2023
+2341,Sant'Apollinare Cmt,f8-f2,8,45.03,11.85725,45.0334,11.82597,Rovigo,Fenil del turco,Rovigo,Frumento Duro,Cesare,10/1/2023,7/31/2024
+2341,Sant'Apollinare Cmt,f2-f1,2,45.00775,11.752444444444444,45.0334,11.82597,Rovigo,Arquà Polesine,Arquà Polesine,Frumento Duro,Cesare,10/1/2022,7/31/2023
+2147,Rolo,f4-f1,4,44.85588888888889,10.801805555555557,44.88542,10.87451,Reggio Emilia,Fabbrico,Fabbrico,Vite da vino,Lambrusco marani,3/1/2022,10/31/2023
+2262,S Pietro Capofiume,f1-f1,1,44.60513888888889,11.56075,44.65378,11.62264,Bologna,Dugliolo,Budrio,Frumento Duro,Cesare,10/1/2022,7/31/2023
+2147,Rolo,f4-f2,4,44.88397222222222,10.79063888888889,44.88542,10.87451,Reggio Emilia,Fabbrico,Fabbrico,Vite da vino,Lambrusco maestri,3/1/2023,10/31/2024
+1325,Macerata Montalbano,f3-f1,3,43.235194444444446,13.35125,43.29223,13.4187,Macerata,Rancia,Tolentino,Frumento Duro,Cesare,10/1/2022,7/31/2023
+2262,S Pietro Capofiume,f7-f2,7,44.56366666666666,11.544722222222221,44.65378,11.62264,Bologna,Vedrana di budrio,Budrio,Frumento Duro,Cesare,10/1/2023,7/31/2024
+2262,S Pietro Capofiume,f10-f2,10,44.30544444444444,11.63013888888889,44.65378,11.62264,Bologna,Casalfiumanese,Casalfiumanese,Vite da vino,Trebbiano,3/1/2023,10/31/2024
+2341,Sant'Apollinare Cmt,f6-f2,6,44.749972222222226,12.136916666666666,45.0334,11.82597,Ferrara,Lagosanto,Lagosanto,Pomodoro da Industria,Fokker,3/1/2023,9/30/2024
+2341,Sant'Apollinare Cmt,f6-f1,6,44.749694444444444,12.136972222222221,45.0334,11.82597,Ferrara,Lagosanto,Lagosanto,Pomodoro da Industria,Fokker,3/1/2022,9/30/2023
+2382,Sasso Marconi Arpa,f9-f2,9,42.69427777777778,11.100722222222222,44.43967,11.24125,Grosseto,Alberese,Grosseto,Frumento Duro,Cesare,10/1/2023,7/31/2024
